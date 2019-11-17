@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -34,7 +35,7 @@
               <a class="nav-link" href="http://www.iiits.ac.in/">About College</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About project</a>
+              <a class="nav-link" href="{% static 'Eis_Project_report.pdf' %}">About project</a>
             </li>
           </ul>
         </div>
