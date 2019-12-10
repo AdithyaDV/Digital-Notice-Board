@@ -20,12 +20,14 @@ def videopage(request):
         dict = new_list[i]
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        dict['time'] = dict['time'] + td(0, 0, 0, 0, 30, 5, 0)
+        dict['time']  = dict['time'] + td(0, 0, 0, 0, 30, 5, 0)
+        dict['endtime'] = dict['endtime'] + td(0, 0, 0, 0, 30, 5, 0)
         uploading_time = dict['time'].strftime("%H:%M:%S")
+        end_time = dict['endtime'].strftime("%H:%M:%S")
         print(current_time)
         print(uploading_time)
-        if current_time < uploading_time:
-            i = i + 1
+        if (current_time < uploading_time)or(current_time > end_time):
+            i = i+1
         else:
             break
     return render(request, 'videopage.html', {'user': dict['user'], 'videourl': dict['file'], 'time': dict['time'], 'duration': dict['durationInSeconds']})
@@ -48,12 +50,14 @@ def videopage1(request):
         dict = new_list[i]
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        dict['time'] = dict['time'] + td(0, 0, 0, 0, 30, 5, 0)
+        dict['time']  = dict['time'] + td(0, 0, 0, 0, 30, 5, 0)
+        dict['endtime'] = dict['endtime'] + td(0, 0, 0, 0, 30, 5, 0)
         uploading_time = dict['time'].strftime("%H:%M:%S")
+        end_time = dict['endtime'].strftime("%H:%M:%S")
         print(current_time)
         print(uploading_time)
-        if current_time < uploading_time:
-            i = i + 1
+        if (current_time < uploading_time)or(current_time > end_time):
+            i = i+1
         else:
             break
     return render(request, 'videopage1.html', {'user': dict['user'], 'videourl': dict['file'], 'time': dict['time'], 'duration':dict['durationInSeconds']})

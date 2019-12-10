@@ -22,10 +22,12 @@ def textpage(request):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         dict['time']  = dict['time'] + td(0, 0, 0, 0, 30, 5, 0)
+        dict['endtime'] = dict['endtime'] + td(0, 0, 0, 0, 30, 5, 0)
         uploading_time = dict['time'].strftime("%H:%M:%S")
+        end_time = dict['endtime'].strftime("%H:%M:%S")
         print(current_time)
         print(uploading_time)
-        if current_time < uploading_time:
+        if (current_time < uploading_time)or(current_time > end_time):
             i = i+1
         else:
             break
@@ -50,10 +52,12 @@ def textpage1(request):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         dict['time']  = dict['time'] + td(0, 0, 0, 0, 30, 5, 0)
+        dict['endtime'] = dict['endtime'] + td(0, 0, 0, 0, 30, 5, 0)
         uploading_time = dict['time'].strftime("%H:%M:%S")
+        end_time = dict['endtime'].strftime("%H:%M:%S")
         print(current_time)
         print(uploading_time)
-        if current_time < uploading_time:
+        if (current_time < uploading_time)or(current_time > end_time):
             i = i+1
         else:
             break

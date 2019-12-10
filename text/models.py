@@ -10,3 +10,4 @@ class Text(models.Model):
     user = models.CharField(max_length=20, default='NULL')
     time = models.DateTimeField()
     text = models.CharField(max_length=100, default='NULL')
+    endtime = models.DateTimeField(default='NULL')
