@@ -43,7 +43,7 @@ def imagepage1(request):
             data_list_1.append(data_list[i])
     print(data_list_1)
     new_list = sorted(data_list_1, key=lambda i: i['time'], reverse=1)
-    i = 0;
+    i = 0
     while True:
         dict = new_list[i]
         now = datetime.now()
