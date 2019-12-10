@@ -11,4 +11,5 @@ class Video(models.Model):
     file = models.FileField(upload_to='video/', default='NULL')
     durationInSeconds = models.IntegerField(default=60)
     time = models.DateTimeField()
+    endtime = models.DateTimeField(default='NULL')
 
